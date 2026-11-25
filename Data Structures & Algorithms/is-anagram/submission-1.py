@@ -3,27 +3,19 @@ class Solution:
         if len(s) != len(t):
             return False
 
-        mapS ={}
-        mapT ={}
+        countS, countT = {}, {}
 
         for i in range(len(s)):
-            mapS[s[i]] = 1 + mapS.get(s[i],0)
-            mapT[t[i]] = 1 + mapT.get(t[i],0)
-        
-        print(mapS)
-        print(mapT)
+            countS[s[i]] = 1 + countS.get(s[i], 0)
+            countT[t[i]] = 1+ countT.get(t[i], 0)
 
-        for ch in s:
-            if mapS[ch] != mapT.get(ch,0):
+        for letter in countS:
+            if countS[letter] != countT.get(letter,0):
                 return False
         return True
+
         
-
-
-    
-
-
-
-
+            
+        #return sorted(s) == sorted(t)
 
         

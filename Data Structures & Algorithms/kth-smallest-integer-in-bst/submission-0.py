@@ -7,23 +7,16 @@
 
 class Solution:
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
-        n = 0
+        n = 0 #  to track number of elements visited 
         stack =[]
-
         curr = root
-        
 
         while curr or stack:
             while curr:
                 stack.append(curr)
                 curr = curr.left
-
-            curr = stack.pop()
-
-            n += 1
+            curr = stack.pop() # lifo
+            n +=1
             if n == k:
                 return curr.val
-
-
-            curr = curr.right
-       
+            curr = curr.right 

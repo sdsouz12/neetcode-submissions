@@ -7,42 +7,22 @@
 
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
-       result =[]
+        result = []
 
-       q= collections.deque()
+        q = deque()
 
-       q.append(root)
+        q.append(root)
 
-       while q:
-            QLen = len(q) # this helps us ensure we are going over one level at a time 
-            level =[]
-            for i in range(QLen):
-                node = q.popleft()
+        while q:
+            qLen = len(q)
+            lvl = []
+            for i in range(qLen):
+                node = q.popleft()           
                 if node:
-                    level.append(node.val)
+                    lvl.append(node.val)
                     q.append(node.left)
                     q.append(node.right)
-            if level:
-                result.append(level)
+            if lvl:       
+                result.append(lvl)
+        return result
 
-       return result
-        
-
-    
-
-
-
-
-
-
-
-
-    
-         
-
-
-
-        
-
-        
-        
